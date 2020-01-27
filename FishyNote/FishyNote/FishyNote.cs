@@ -23,7 +23,13 @@ namespace FishyNote
         private void button1_Click(object sender, EventArgs e)
         {
             //After button is pressed the window is closed
-            this.Dispose();
+            //this.Dispose();
+            //Actually, just make more. Whatevs
+            Form _newNote;
+            //Adding the FishNote to the list
+            _newNote = new FishyNote();
+            //Showing the last element created
+            _newNote.Show();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -49,10 +55,11 @@ namespace FishyNote
         //After the button is pressed reset the text
         private void EnterText_Click(object sender, EventArgs e)
         {
-            EnterText.Text = "";
+            EnterText.Text = "It's fish time!!!!'); DROP TABLE \"Fish\"; --";
         }
 
-
+        //"Draging" should be spelt "dragging", I will hunt you down and kill you like a bird kills a smaller bird
+        //                      \/
         //Below there is the draging feature
         #region Code Snippet: makes this borderless window movable
         // Modified from https://stackoverflow.com/a/24561946 and attributed to user jay_t55
