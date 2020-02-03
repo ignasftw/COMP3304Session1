@@ -35,7 +35,7 @@
             // 
             // EnterText
             // 
-            this.EnterText.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.EnterText.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.EnterText.Location = new System.Drawing.Point(0, 104);
             this.EnterText.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.EnterText.Multiline = true;
@@ -47,6 +47,7 @@
             // 
             // DeleteButton
             // 
+            this.DeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DeleteButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.DeleteButton.BackColor = System.Drawing.Color.Red;
             this.DeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

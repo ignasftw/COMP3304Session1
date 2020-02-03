@@ -10,20 +10,34 @@ using System.Windows.Forms;
 
 namespace FishyNote
 {
-    public partial class FishyNote : Form
+    public partial class FishyNote : Form, IFishyNote
     {
         //Declaire a bool, called '_minimized' which checks if the window is minimazed, default value if set to false
         private bool _minimized = false;
 
-        public FishyNote()
+        //Starting Height
+        int _height;
+        //Starting Width
+        int _width;
+
+        //Declaire an int, which represents id of the note, call it '_id'
+        int _id;
+
+        public FishyNote(Delegate delref)
         {
             InitializeComponent();
+            //Setting main screen dimensions
+            _height = this.Height;
+            _width = this.Width;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            RemoveNoteDeligate remDeligate = new RemoveNoteDeligate(delref.RemoveNote);
             //After button is pressed the window is closed
-            this.Dispose();
+            remDeligate(_id);
+            //The line above should replace the line bellow
+            //this.Dispose();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -32,14 +46,18 @@ namespace FishyNote
             if (_minimized)
             {
                 //Setting to default value of 470
-                this.Height = 470;
+                this.Height = _height;
+                this.Width = _width;
+                EnterText.Height = 327;
                 //Setting to expanded state
                 _minimized = false;
             }
             else
             {
                 //If the window is not minimazed then shrink it
-                this.Height = 150;
+                this.Height = 100;
+                this.Width = 150;
+                EnterText.Height = 0;
                 //Set it to minimazed state
                 _minimized = true;
             }

@@ -46,12 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Delegates.cs" />
     <Compile Include="FishyNote.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FishyNote.Designer.cs">
       <DependentUpon>FishyNote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IFishyNote.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FishyNote.resx">
