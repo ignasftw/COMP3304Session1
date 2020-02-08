@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COMP3304Session1", "COMP3304Session1\COMP3304Session1.csproj", "{F6B45416-6031-430F-9DF0-1D6920E7056F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FishyNote", "FishyNote\FishyNote\FishyNote.csproj", "{5C93F9BC-197B-4383-B6D7-3234D9206FB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{F6B45416-6031-430F-9DF0-1D6920E7056F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6B45416-6031-430F-9DF0-1D6920E7056F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6B45416-6031-430F-9DF0-1D6920E7056F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C93F9BC-197B-4383-B6D7-3234D9206FB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C93F9BC-197B-4383-B6D7-3234D9206FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C93F9BC-197B-4383-B6D7-3234D9206FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C93F9BC-197B-4383-B6D7-3234D9206FB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

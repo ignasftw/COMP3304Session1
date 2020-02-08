@@ -54,7 +54,6 @@
       <DependentUpon>FishyNote.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IFishyNote.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FishyNote.resx">
       <DependentUpon>FishyNote.cs</DependentUpon>

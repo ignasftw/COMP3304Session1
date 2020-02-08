@@ -46,15 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Container.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="FishyNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FishyNote.Designer.cs">
+      <DependentUpon>FishyNote.cs</DependentUpon>
+    </Compile>
     <Compile Include="FishyNotes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FishyNotes.Designer.cs">
       <DependentUpon>FishyNotes.cs</DependentUpon>
     </Compile>
-    <Compile Include="IFishyNotes.cs" />
+    <Compile Include="Interfaces\IFishyNote.cs" />
+    <Compile Include="Interfaces\IFishyNotes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FishyNote.resx">
+      <DependentUpon>FishyNote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FishyNotes.resx">
       <DependentUpon>FishyNotes.cs</DependentUpon>
     </EmbeddedResource>
@@ -80,11 +92,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FishyNote\FishyNote\FishyNote.csproj">
-      <Project>{5c93f9bc-197b-4383-b6d7-3234d9206fb6}</Project>
-      <Name>FishyNote</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

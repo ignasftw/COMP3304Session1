@@ -26,5 +26,7 @@ namespace COMP3304Session1
          * Removes text from the FishyNote
          */
         void RemoveText(int id);
+
+        void RemoveNote(int id);
     }
 }
