@@ -19,17 +19,17 @@ namespace COMP3304Session1
         int _height;
         //Starting Width
         int _width;
-        //Declaire a IFishyNotes, parent reference for asking parent requests, call it '_parentRef'
-        IFishyNotes _parentRef;
+        //Declaire a INotes, parent reference for asking parent requests, call it '_parentRef'
+        INotes _parentRef;
         //Declaire an int, to tell parent its "name" on the list, call it '_id'
         int _id;
 
         //Declaire a signature for delegate which asks parent to dispose this Note
-        public delegate void RemNote(int id, IFishyNotes reference);
+        public delegate void RemNote(int id, INotes reference);
 
         /*METHOD: Setting parameters
          */
-        public FishyNote(IFishyNotes parentRef, int id)
+        public FishyNote(INotes parentRef, int id)
         {
             InitializeComponent();
             //Setting main screen dimensions

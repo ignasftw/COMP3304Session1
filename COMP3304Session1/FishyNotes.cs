@@ -13,12 +13,9 @@ namespace COMP3304Session1
 {
     public partial class FishyNotes : Form, IFishyNotes
     {
-        //Declairing a Form, which will store an instance for a note, call it'_newNote'
-        private List<Form> _notes = new List<Form>();
-        //Declairing an int, which will show current note's id, used for assigning notes, call it '_id'
-        private int _id =0;
+
         //Declaire a Container which will store data of _notes, call it '_noteData'
-        Container _noteData = new Container();
+        INotes _noteData = new NoteData();
 
         public FishyNotes()
         {
@@ -31,12 +28,8 @@ namespace COMP3304Session1
          */
         private void AddNote_Click(object sender, EventArgs e)
         {
-            //Adding the FishNote to the list
-            _notes.Add(new FishyNote((IFishyNotes)this, _id));
-            //Showing the last element created
-            _notes.Last().Show();
-            //Increasing id count by 1
-            _id++;
+            //Asking NoteData to create a Note
+            _noteData.AddNote(_noteData);
         }
 
         /*
@@ -56,7 +49,7 @@ namespace COMP3304Session1
          */
         public void UpdateText(int id, string text)
         {
-            _notes[id].Text = text;
+            //_notes[id].Text = text;
         }
 
         /*
@@ -69,8 +62,7 @@ namespace COMP3304Session1
 
         public void RemoveNote(int id)
         {
-            _notes[id].Dispose();
-            _notes.Remove(_notes[id]);
+            _noteData.RemoveNote(id);
         }
     }
 }

@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace COMP3304Session1
 {
-    class Container
+    public interface INotes
     {
-        private Dictionary<int, string> _noteText = new Dictionary<int, string>();
+        void AddNote(INotes parentref);
 
+        void RemoveNote(int id);
     }
 }
