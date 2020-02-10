@@ -81,6 +81,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -90,10 +92,23 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="wwwroot\db-diagrams\MaterialIcons-Regular.012cf6a10129e2275d79.woff" />
+    <None Include="wwwroot\db-diagrams\MaterialIcons-Regular.570eb83859dc23dd0eec.woff2" />
+    <None Include="wwwroot\db-diagrams\MaterialIcons-Regular.a37b0c01c0baf1888ca8.ttf" />
+    <None Include="wwwroot\db-diagrams\MaterialIcons-Regular.e79bfd88537def476913.eot" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="wwwroot\db-diagrams\3rdpartylicenses.txt" />
+    <Content Include="wwwroot\db-diagrams\favicon.ico" />
+    <Content Include="wwwroot\db-diagrams\index.html" />
+    <Content Include="wwwroot\db-diagrams\inline.764ea7e8f233c3a6809b.bundle.js" />
+    <Content Include="wwwroot\db-diagrams\main.d0329d265059e3e55cc6.bundle.js" />
+    <Content Include="wwwroot\db-diagrams\polyfills.0963b44a58b5526cfab7.bundle.js" />
+    <Content Include="wwwroot\db-diagrams\styles.20f9545db506af88f79c.bundle.css" />
+    <Content Include="wwwroot\db-diagrams\vendor.fa09c1316e94520ecd3d.bundle.js" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

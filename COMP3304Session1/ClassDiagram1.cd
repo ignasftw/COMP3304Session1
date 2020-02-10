@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="COMP3304Session1.Program">
+    <Position X="0.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COMP3304Session1.NoteData" BaseTypeListCollapsed="true">
+    <Position X="6" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAQAAAAAAAAAAEAAABAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>NoteData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.255" Collapsed="true" />
+  </Class>
+  <Class Name="COMP3304Session1.FishyNotes" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="3" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACgAAAEBAAKAAAACAgAAAAAAAQAAAAAIAAA=</HashCode>
+      <FileName>FishyNotes.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="COMP3304Session1.FishyNote">
+    <Position X="4.25" Y="4.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="COMP3304Session1.FishyNote.RemNote" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>FishyNote.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AYAAEAAAACCAAAAAAADCAAACgBEgABgIAEAAAAAAIgA=</HashCode>
+      <FileName>FishyNote.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="COMP3304Session1.Delegates">
+    <Position X="8" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAEAAAAAAACAAAAAAIAAA=</HashCode>
+      <FileName>Delegates.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="COMP3304Session1.IFishyNote" Collapsed="true">
+    <Position X="4.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IFishyNote.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="COMP3304Session1.IFishyNotes">
+    <Position X="2.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAEBAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IFishyNotes.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="COMP3304Session1.INotes">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Interfaces\INotes.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="COMP3304Session1.INoteText" Collapsed="true">
+    <Position X="6" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\INoteText.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

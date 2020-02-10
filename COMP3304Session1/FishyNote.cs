@@ -25,7 +25,7 @@ namespace COMP3304Session1
         int _id;
 
         //Declaire a signature for delegate which asks parent to dispose this Note
-        public delegate void RemNote(int id, INotes reference);
+        private delegate void RemNote(int id, INotes reference);
 
         /*METHOD: Setting parameters
          */
