@@ -26,6 +26,10 @@ namespace COMP3304Session1
 
         //Declaire a signature for delegate which asks parent to dispose this Note
         private delegate void RemNote(int id, INotes reference);
+        //Declaire a signature for delegate which asks parent to store it's text into dictionary
+        private delegate void AddText(IFishyNotes reff, int id, string text);
+        //Declaire a signature for delegate which asks parent to store it's text into dictionary
+        private delegate string GetNote(IFishyNotes reff, int id);
 
         /*METHOD: Setting parameters
          */
@@ -45,7 +49,6 @@ namespace COMP3304Session1
         {
             //Creating and initializing a delegate, this should be created somewhere else and passed as an interface
             Delegates del = new Delegates();
-
             //Initializing the signature
             RemNote _removeNote = new RemNote(del.RemoNote);
             //Calling the initialized method
@@ -82,7 +85,15 @@ namespace COMP3304Session1
         //After the button is pressed reset the text
         private void EnterText_Click(object sender, EventArgs e)
         {
+            //Creating and initializing a delegate, this should be created somewhere else and passed as an interface
+            Delegates del = new Delegates();
+            //Initializing the signature
+            AddText createText = new AddText(del.AddText);
+            GetNote update = new GetNote(del.GetNote);
+            //Calling the initialized method
+            createText((IFishyNotes)_parentRef, _id, EnterText.Text);
             EnterText.Text = "";
+            EnterText.Text = update((IFishyNotes)_parentRef,_id);
         }
 
 

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace COMP3304Session1
 {
-    public partial class FishyNotes : Form, IFishyNotes
+    public partial class FishyNotes : Form
     {
         //TO-DO change this so Notes would be contained separately from Data
         //Declaire a Container which will store data of _notes, call it '_noteData'
@@ -34,60 +34,11 @@ namespace COMP3304Session1
             _noteData.AddNote(_noteData);
         }
 
+
+
         public void RemoveNote(int id)
         {
             _noteData.RemoveNote(id);
-        }
-
-        /*
-         
-             This should be done in 
-             _noteData
-             
-             
-             */
-        /*
-         * Adds 'FishyNote''s text into a dictionary
-         * int id - id of the FishyNote
-         * string text - text content of the FishyNote
-         */
-        public void AddText(int id, string text)
-        {
-            //_notes[id].Add(text);
-        }
-
-
-        /*
-
-         This should be done in 
-         _noteData
-
-
-         */
-        /*
-         * Adds 'FishyNote''s text into a dictionary
-         * int id - id of the FishyNote
-         * string text - text content of the FishyNote
-         */
-        public void UpdateText(int id, string text)
-        {
-            //_notes[id].Text = text;
-        }
-
-
-        /*
-
-         This should be done in 
-         _noteData
-
-
-         */
-        /*
-         * Removes text from the FishyNote
-         */
-        public void RemoveText(int id)
-        {
-            //_notes.Remove(id);
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace COMP3304Session1
 {
-    class NoteData : INoteText, INotes
+    class NoteData : INoteText, INotes, IFishyNotes
     {
         //Declairing an int, which will show current note's id, used for assigning notes, call it '_id'
         private int _id = 0;
@@ -30,7 +30,56 @@ namespace COMP3304Session1
         public void RemoveNote(int id)
         {
             _notes[id].Dispose();
+            //Cannot remove notes from the list yet because then it needs to shift ids
             //_notes.Remove(_notes[id]);
+        }
+
+        /*
+         * Adds 'FishyNote''s text into a dictionary
+         * int id - id of the FishyNote
+         * string text - text content of the FishyNote
+         */
+        public void AddText(int id, string text)
+        {
+            if(!_noteText.ContainsKey(id))
+            {
+                _noteText.Add(id, text);
+                Console.WriteLine("Text has been created on {0} note. Text: {1}", id, text);
+            }
+            else
+            {
+                Console.WriteLine("\n\n\nThe text already exists on {0} note.", id);
+                _noteText[id] = text + "Where is Jack? ";
+                Console.WriteLine("The note was updated into: {0}", text);
+            }
+        }
+
+
+        /*
+         * Returns a text from the dictionary
+         * this can be used to retrieve text to update the note
+         * int id - id of the FishyNote
+         * string text - text content of the FishyNote
+         */
+        public string UpdateText(int id)
+        {
+            if (_noteText.ContainsKey(id))
+                return _noteText[id];
+            else return "";
+        }
+
+
+        /*
+         * Removes text from the FishyNote
+         */
+        public void RemoveText(int id)
+        {
+            if(_noteText.ContainsKey(id))
+            {
+                Console.WriteLine("...the note {0} was removed.", id);
+                _noteText[id] = "";
+                _noteText.Remove(id);
+            }
         }
     }
 }

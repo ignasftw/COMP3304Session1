@@ -20,7 +20,7 @@ namespace COMP3304Session1
          * int id - id of the FishyNote
          * string text - text content of the FishyNote
          */
-        void UpdateText(int id, string text);
+        string UpdateText(int id);
 
         /*
          * Removes text from the FishyNote

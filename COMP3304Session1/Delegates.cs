@@ -11,15 +11,14 @@ namespace COMP3304Session1
     public class Delegates
     {
         /*METHOD:
-         * FishyNote asks to be retrived from FishyNotes
+         * FishyNote asks to be created from FishyNotes
          Parameters:
-         int id - id of a note which should be retrieved
-         IFishyNotes - an interface reference of who should send it it
+         int id - id of a note which should be created
+         IFishyNotes - an interface reference of who should send it
          */
         public void AddNote(int id, IFishyNotes reference)
         {
-            //After receiving a request Deligate asks FishyNotes to remove FishyNote
-            //reference.RemoveNote(id);
+            //After receiving a request Deligate asks FishyNotes to add FishyNote
         }
 
 
@@ -29,12 +28,10 @@ namespace COMP3304Session1
          int id - id of a note which should be retrieved
          IFishyNotes - an interface reference of who should send it it
          */
-        public void GetNote(int id, IFishyNotes reference)
+        public string GetNote(IFishyNotes reference, int id)
         {
             Console.WriteLine("FishyNote " + id + ": has requested to be retrieved.");
-
-            //After receiving a request Deligate asks FishyNotes to remove FishyNote
-            reference.RemoveNote(id);
+            return reference.UpdateText(id);
         }
 
 
@@ -64,6 +61,12 @@ namespace COMP3304Session1
 
             //After receiving a request Deligate asks FishyNotes to remove FishyNote
             return new FishyNote(reference, id);
+        }
+
+        public void AddText(IFishyNotes reff,int id, string text)
+        {
+            //_notes[id].Add(text);
+            reff.AddText(id, text);
         }
     }
 }
