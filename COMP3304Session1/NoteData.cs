@@ -16,11 +16,14 @@ namespace COMP3304Session1
         //Declaire a Disctionary, which will store Note's text, call it '_noteText'
         private Dictionary<int, string> _noteText = new Dictionary<int, string>();
 
+        //Creating and initializing a delegate, this should be created somewhere else and passed as an interface
+        Delegates del = new Delegates();
+
         public void AddNote(INotes parentref)
         {
             Console.WriteLine("FishyNote " + _id + ": has requested to be created.");
             //Adding the FishNote to the list
-            _notes.Add(new FishyNote(parentref, _id));
+            _notes.Add(new FishyNote(RemoveNote,AddText, GetNote, _id));
             //Showing the last element created
             _notes.Last().Show();
             //Increasing id count by 1

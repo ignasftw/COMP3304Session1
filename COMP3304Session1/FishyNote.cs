@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace COMP3304Session1
 {
+    /// <summary>
+    /// A CLASS which deals with individual note
+    /// </summary>
     public partial class FishyNote : Form
     {
         //Declaire a bool, called '_minimized' which checks if the window is minimazed, default value if set to false
@@ -19,44 +22,46 @@ namespace COMP3304Session1
         int _height;
         //Starting Width
         int _width;
-        //Declaire a INotes, parent reference for asking parent requests, call it '_parentRef'
-        INotes _parentRef;
-        //Declaire an int, to tell parent its "name" on the list, call it '_id'
+        //Declaire an int, to tell composite its "name" on the list, call it '_id'
         int _id;
 
-        //Declaire a signature for delegate which asks parent to dispose this Note
-        private delegate void RemNote(int id, INotes reference);
-        //Declaire a signature for delegate which asks parent to store it's text into dictionary
-        private delegate void AddText(IFishyNotes reff, int id, string text);
-        //Declaire a signature for delegate which asks parent to store it's text into dictionary
-        private delegate string GetNote(IFishyNotes reff, int id);
+        //Declare a delegate that removes notes 
+        Delegates.RemoveNote _deleRemoveNote;
+
+        //Declare a delegate that removes notes 
+        Delegates.AddText _deleEntertext;
+
+        //Declare a delegate which gets the data stored in NoteData
+        Delegates.GetNote _deleGetNote;
 
         /*METHOD: Setting parameters
          */
-        public FishyNote(INotes parentRef, int id)
+
+            /*Poor cohesion :(*/
+        public FishyNote(Delegates.RemoveNote delRem, Delegates.AddText delAdd, Delegates.GetNote getNote, int id)
         {
             InitializeComponent();
             //Setting main screen dimensions
             _height = this.Height;
             _width = this.Width;
-            //Setting parent reference
-            _parentRef = parentRef;
+            //Setting a composite method delegate which links direcly to that method
+            _deleRemoveNote = delRem;
+            _deleEntertext = delAdd;
+            _deleGetNote = getNote;
             //Setting the id number to object
             _id = id;
         }
 
+        /*Make a lot of methods which get and set delegates*/
+
         private void button1_Click(object sender, EventArgs e)
         {
-            //Creating and initializing a delegate, this should be created somewhere else and passed as an interface
-            Delegates del = new Delegates();
-            //Initializing the signature
-            RemNote _removeNote = new RemNote(del.RemoNote);
             //Calling the initialized method
-            _removeNote(_id, _parentRef);
+            _deleRemoveNote(_id);
 
             //Instead of asking reference to remove FishyNote from the list, the deligate asks a sent interface to remove it
             //The line bellow is a regular way of asking reference to remove it
-            //_parentRef.RemoveNote(_id); 
+            //_compositeRef.RemoveNote(_id); 
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -85,15 +90,12 @@ namespace COMP3304Session1
         //After the button is pressed reset the text
         private void EnterText_Click(object sender, EventArgs e)
         {
-            //Creating and initializing a delegate, this should be created somewhere else and passed as an interface
-            Delegates del = new Delegates();
-            //Initializing the signature
-            AddText createText = new AddText(del.AddText);
+
             GetNote update = new GetNote(del.GetNote);
             //Calling the initialized method
-            createText((IFishyNotes)_parentRef, _id, EnterText.Text);
+            createText((IFishyNotes)_compositeRef, _id, EnterText.Text);
             EnterText.Text = "";
-            EnterText.Text = update((IFishyNotes)_parentRef,_id);
+            EnterText.Text = update((IFishyNotes)_compositeRef,_id);
         }
 
 

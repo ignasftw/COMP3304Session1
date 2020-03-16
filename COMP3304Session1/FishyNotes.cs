@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace COMP3304Session1
 {
+    /// <summary>
+    /// A CLASS where all note's data is contained, it is only possible to add, remove and retrieve data here
+    /// </summary>
     public partial class FishyNotes : Form
     {
         //TO-DO change this so Notes would be contained separately from Data
@@ -28,13 +31,11 @@ namespace COMP3304Session1
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AddNote_Click(object sender, EventArgs e)
+        public void AddNote_Click(object sender, EventArgs e)
         {
             //Asking NoteData to create a Note
             _noteData.AddNote(_noteData);
         }
-
-
 
         public void RemoveNote(int id)
         {
