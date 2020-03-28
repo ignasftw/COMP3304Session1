@@ -15,7 +15,6 @@ namespace COMP3304Session1
         private List<Form> _notes = new List<Form>();
         //Declaire a Disctionary, which will store Note's text, call it '_noteText'
         private Dictionary<int, string> _noteText = new Dictionary<int, string>();
-
         //Creating and initializing a delegate, this should be created somewhere else and passed as an interface
         Delegates del = new Delegates();
 
@@ -23,11 +22,21 @@ namespace COMP3304Session1
         {
             Console.WriteLine("FishyNote " + _id + ": has requested to be created.");
             //Adding the FishNote to the list
-            _notes.Add(new FishyNote(RemoveNote,AddText, GetNote, _id));
+            _notes.Add(new FishyNote(RemoveNote, AddText, GetNote, GetText,_id));
             //Showing the last element created
             _notes.Last().Show();
             //Increasing id count by 1
             _id++;
+        }
+
+        public FishyNote GetNote(int id)
+        {
+            return (FishyNote)_notes[id];
+        }
+
+        public string GetText(int id)
+        {
+            return _noteText[id];
         }
 
         public void RemoveNote(int id)
@@ -52,7 +61,7 @@ namespace COMP3304Session1
             else
             {
                 Console.WriteLine("\n\n\nThe text already exists on {0} note.", id);
-                _noteText[id] = text + "Where is Jack? ";
+                _noteText[id] = text;
                 Console.WriteLine("The note was updated into: {0}", text);
             }
         }

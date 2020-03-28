@@ -16,7 +16,9 @@ namespace COMP3304Session1
          int id - id of a note which should be retrieved
          IFishyNotes - an interface reference of who should send it it
          */
-        public delegate string GetNote(IFishyNotes reff, int id);
+        public delegate FishyNote GetNote(int id);
+
+        public delegate string GetText(int id);
 
 
 
@@ -46,6 +48,6 @@ namespace COMP3304Session1
          int id - id of a note which should have
          string text - text that should be added
          */
-        public delegate void AddText(IFishyNotes reff, int id, string text);
+        public delegate void AddText(int id, string text);
     }
 }

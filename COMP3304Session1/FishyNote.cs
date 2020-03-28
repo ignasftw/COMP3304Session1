@@ -25,6 +25,7 @@ namespace COMP3304Session1
         //Declaire an int, to tell composite its "name" on the list, call it '_id'
         int _id;
 
+
         //Declare a delegate that removes notes 
         Delegates.RemoveNote _deleRemoveNote;
 
@@ -34,11 +35,14 @@ namespace COMP3304Session1
         //Declare a delegate which gets the data stored in NoteData
         Delegates.GetNote _deleGetNote;
 
+        //Declare a delegate which gets the data stored in NoteData
+        Delegates.GetText _deleGetText;
+
         /*METHOD: Setting parameters
          */
 
-            /*Poor cohesion :(*/
-        public FishyNote(Delegates.RemoveNote delRem, Delegates.AddText delAdd, Delegates.GetNote getNote, int id)
+        /*Poor cohesion :(*/
+        public FishyNote(Delegates.RemoveNote delRem, Delegates.AddText delAdd, Delegates.GetNote delgetNote, Delegates.GetText delGetTxt ,int id)
         {
             InitializeComponent();
             //Setting main screen dimensions
@@ -47,7 +51,8 @@ namespace COMP3304Session1
             //Setting a composite method delegate which links direcly to that method
             _deleRemoveNote = delRem;
             _deleEntertext = delAdd;
-            _deleGetNote = getNote;
+            _deleGetNote = delgetNote;
+            _deleGetText = delGetTxt;
             //Setting the id number to object
             _id = id;
         }
@@ -58,10 +63,6 @@ namespace COMP3304Session1
         {
             //Calling the initialized method
             _deleRemoveNote(_id);
-
-            //Instead of asking reference to remove FishyNote from the list, the deligate asks a sent interface to remove it
-            //The line bellow is a regular way of asking reference to remove it
-            //_compositeRef.RemoveNote(_id); 
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -90,12 +91,10 @@ namespace COMP3304Session1
         //After the button is pressed reset the text
         private void EnterText_Click(object sender, EventArgs e)
         {
-
-            GetNote update = new GetNote(del.GetNote);
             //Calling the initialized method
-            createText((IFishyNotes)_compositeRef, _id, EnterText.Text);
-            EnterText.Text = "";
-            EnterText.Text = update((IFishyNotes)_compositeRef,_id);
+            _deleEntertext(_id, EnterText.Text);
+            //Updating screen with saved text
+            EnterText.Text = _deleGetText(_id);
         }
 
 
