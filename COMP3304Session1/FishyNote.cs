@@ -91,7 +91,7 @@ namespace COMP3304Session1
         //After the button is pressed reset the text
         private void EnterText_Click(object sender, EventArgs e)
         {
-            //Calling the initialized method
+            //Saving current text into a library
             _deleEntertext(_id, EnterText.Text);
             //Updating screen with saved text
             EnterText.Text = _deleGetText(_id);
